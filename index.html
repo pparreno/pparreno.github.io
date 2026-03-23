@@ -625,6 +625,66 @@
   .footer-copy { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
   .footer-copy span { color: var(--accent); }
 
+  /* ── TEACHING ── */
+  .teaching-intro {
+    font-family: var(--mono); font-size: 0.82rem;
+    color: var(--muted); line-height: 1.9; max-width: 700px; margin-bottom: 52px;
+  }
+  .teaching-intro strong { color: var(--accent2); font-weight: 400; }
+  .teaching-meta-bar {
+    display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+    margin-bottom: 52px; padding: 24px 32px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent2);
+  }
+  .teaching-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .teaching-meta-label {
+    font-family: var(--mono); font-size: 0.62rem;
+    color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .teaching-meta-value { font-family: var(--mono); font-size: 0.82rem; color: var(--accent2); }
+  .teaching-meta-divider { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
+  .teaching-courses {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-bottom: 2px;
+  }
+  .teaching-course {
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 32px 28px; position: relative; overflow: hidden;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .teaching-course::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--accent2);
+    transform: scaleY(0); transition: transform 0.3s ease; transform-origin: bottom;
+  }
+  .teaching-course:hover::before { transform: scaleY(1); }
+  .teaching-course:hover { border-color: rgba(0,201,255,0.25); background: #0d1620; }
+  .course-icon { font-size: 1.6rem; margin-bottom: 16px; }
+  .course-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; line-height: 1.35; }
+  .course-desc {
+    font-family: var(--mono); font-size: 0.72rem; color: var(--muted);
+    line-height: 1.7; margin-bottom: 18px;
+  }
+  .course-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .course-tag {
+    padding: 3px 9px; border-radius: 2px;
+    font-family: var(--mono); font-size: 0.62rem;
+    background: rgba(0,201,255,0.07); border: 1px solid rgba(0,201,255,0.2);
+    color: var(--accent2);
+  }
+  .teaching-highlights { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+  .teaching-stat {
+    background: var(--bg2); border: 1px solid var(--border);
+    padding: 28px 32px; text-align: center;
+  }
+  .teaching-stat-num {
+    font-size: 2rem; font-weight: 800; color: var(--accent2); line-height: 1; margin-bottom: 6px;
+  }
+  .teaching-stat-label {
+    font-family: var(--mono); font-size: 0.68rem;
+    color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: none; } }
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -648,6 +708,8 @@
     .exp-meta { text-align: left; }
     footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
     .hero { padding: 100px 24px 60px; }
+    .teaching-courses, .teaching-highlights { grid-template-columns: 1fr; }
+    .teaching-meta-divider { display: none; }
   }
 </style>
 </head>
@@ -664,6 +726,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#teaching">Teaching</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -684,7 +747,7 @@
       I ship products that drive real user engagement across Android, iOS, and mobile gaming platforms.
     </p>
     <div class="hero-cta">
-      <a href="mailto:paul.john.parreno@gmail.com" class="btn btn-primary">↗ Get in touch</a>
+      <a href="/cdn-cgi/l/email-protection#700011051c5e1a1f181e5e00110202151e1f30171d11191c5e131f1d" class="btn btn-primary">↗ Get in touch</a>
       <a href="https://www.linkedin.com/in/pj-parreno/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
     </div>
   </div>
@@ -1232,10 +1295,107 @@
   </div>
 </section>
 
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Teaching</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <p class="teaching-intro reveal">
+    Alongside industry work, I spent <strong>3 years and 5 months</strong> as a part-time
+    Assistant Instructor at the University of San Carlos, teaching mobile app development
+    to Computer Science students — covering iOS, Android, and core Object-Oriented programming concepts.
+  </p>
+
+  <div class="teaching-meta-bar reveal">
+    <div class="teaching-meta-item">
+      <span class="teaching-meta-label">Institution</span>
+      <span class="teaching-meta-value">University of San Carlos</span>
+    </div>
+    <div class="teaching-meta-divider"></div>
+    <div class="teaching-meta-item">
+      <span class="teaching-meta-label">Role</span>
+      <span class="teaching-meta-value">Assistant Collegiate Instructor</span>
+    </div>
+    <div class="teaching-meta-divider"></div>
+    <div class="teaching-meta-item">
+      <span class="teaching-meta-label">Department</span>
+      <span class="teaching-meta-value">Computer Science</span>
+    </div>
+    <div class="teaching-meta-divider"></div>
+    <div class="teaching-meta-item">
+      <span class="teaching-meta-label">Period</span>
+      <span class="teaching-meta-value">Nov 2011 – Mar 2015</span>
+    </div>
+    <div class="teaching-meta-divider"></div>
+    <div class="teaching-meta-item">
+      <span class="teaching-meta-label">Location</span>
+      <span class="teaching-meta-value">Cebu City, Philippines</span>
+    </div>
+  </div>
+
+  <div class="teaching-courses">
+    <div class="teaching-course reveal">
+      <div class="course-icon">🍎</div>
+      <div class="course-title">iOS App Development</div>
+      <p class="course-desc">Taught mobile application development for Apple platforms, covering UI design through to App Store submission using Apple's native SDKs and toolchain.</p>
+      <div class="course-tags">
+        <span class="course-tag">Objective-C</span>
+        <span class="course-tag">Xcode</span>
+        <span class="course-tag">UIKit</span>
+        <span class="course-tag">iOS SDK</span>
+        <span class="course-tag">MVC</span>
+      </div>
+    </div>
+    <div class="teaching-course reveal">
+      <div class="course-icon">🤖</div>
+      <div class="course-title">Android App Development</div>
+      <p class="course-desc">Instructed students in building native Android applications, covering Activity lifecycles, layouts, data persistence, and publishing to the Google Play Store.</p>
+      <div class="course-tags">
+        <span class="course-tag">Java</span>
+        <span class="course-tag">Android Studio</span>
+        <span class="course-tag">Android SDK</span>
+        <span class="course-tag">SQLite</span>
+        <span class="course-tag">XML Layouts</span>
+      </div>
+    </div>
+    <div class="teaching-course reveal">
+      <div class="course-icon">🧩</div>
+      <div class="course-title">Object-Oriented Concepts</div>
+      <p class="course-desc">Grounded students in core OOP principles — encapsulation, inheritance, polymorphism, and abstraction — forming the foundation for all mobile development coursework.</p>
+      <div class="course-tags">
+        <span class="course-tag">OOP</span>
+        <span class="course-tag">Design Patterns</span>
+        <span class="course-tag">Java</span>
+        <span class="course-tag">Class Design</span>
+        <span class="course-tag">SOLID</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="teaching-highlights">
+    <div class="teaching-stat reveal">
+      <div class="teaching-stat-num">3.5<span style="font-size:1.2rem">yrs</span></div>
+      <div class="teaching-stat-label">Part-time Instruction</div>
+    </div>
+    <div class="teaching-stat reveal">
+      <div class="teaching-stat-num">3</div>
+      <div class="teaching-stat-label">Courses Taught</div>
+    </div>
+    <div class="teaching-stat reveal">
+      <div class="teaching-stat-num">2</div>
+      <div class="teaching-stat-label">Mobile Platforms</div>
+    </div>
+  </div>
+
+</section>
+
 <!-- CONTACT -->
 <section id="contact" style="background: var(--bg2);">
   <div class="section-header reveal">
-    <span class="section-num">04</span>
+    <span class="section-num">05</span>
     <h2 class="section-title">Contact</h2>
     <div class="section-line"></div>
   </div>
@@ -1248,7 +1408,7 @@
       </p>
       <div class="contact-item">
         <div class="contact-icon">✉</div>
-        <div class="contact-detail"><a href="mailto:paul.john.parreno@gmail.com">paul.john.parreno@gmail.com</a></div>
+        <div class="contact-detail"><a href="/cdn-cgi/l/email-protection#136372667f3d797c7b7d3d63726161767d7c53747e727a7f3d707c7e"><span class="__cf_email__" data-cfemail="b2c2d3c7de9cd8dddadc9cc2d3c0c0d7dcddf2d5dfd3dbde9cd1dddf">[email&#160;protected]</span></a></div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📞</div>
@@ -1295,7 +1455,7 @@
   <div class="footer-copy">Reading, UK &nbsp;·&nbsp; <span>pj-parreno.dev</span></div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -1325,6 +1485,10 @@
     });
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
+  // Fallback for local file preview — reveal all after 1.5s
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 1500);
 
   // Project filter
   function filterProjects(category, btn) {
